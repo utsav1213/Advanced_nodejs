@@ -1,0 +1,20 @@
+{
+  "name": "github-activity",
+  "version": "1.0.0",
+  "description": "A CLI tool to fetch and display GitHub user activity",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "github-activity": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github",
+    "cli",
+    "activity"
+  ],
+  "author": "",
+  "license": "MIT"
+}

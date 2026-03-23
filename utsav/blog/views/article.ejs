@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= article.title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="/home" class="back-link">← Back to Home</a>
+      <h1><%= article.title %></h1>
+      <p class="date"><%= article.date %></p>
+      <div class="content"><%- article.content.replace(/\n/g, '<br />') %></div>
+    </div>
+  </body>
+</html>

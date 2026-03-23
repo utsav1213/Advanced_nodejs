@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+const { startProxy, clearCache } = require("../src/cachingProxy");
+const yargs = require("yargs");
+
+const argv = yargs
+  .option("port", { 
+    alias: "p",
+    type: "number",
+    description: "Port to run the caching proxy server on",
+  })
+  .option("origin", {
+    alias: "o",
+    type: "string",
+    description: "Origin server URL to forward requests to",
+  })
+  .option("clear-cache", {
+    type: "boolean",
+    description: "Clear the cache",
+  })
+  .help().argv;
+
+if (argv["clear-cache"]) {
+  clearCache();
+  console.log("Cache cleared.");
+  process.exit(0);
+}
+
+if (!argv.port || !argv.origin) {
+  console.error(
+    "Error: --port and --origin are required unless --clear-cache is used.",
+  );
+  process.exit(1);
+}
+
+startProxy(argv.port, argv.origin);

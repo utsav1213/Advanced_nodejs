@@ -1,0 +1,17 @@
+{
+  "name": "caching-proxy",
+  "version": "1.0.0",
+  "description": "A CLI tool for a caching proxy server.",
+  "main": "src/cachingProxy.js",
+  "bin": {
+    "caching-proxy": "bin/caching-proxy"
+  },
+  "scripts": {
+    "start": "node bin/caching-proxy"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
